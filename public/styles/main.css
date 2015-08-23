@@ -1,0 +1,47 @@
+html,
+body {
+    height: 100%;
+}
+
+.controller {
+    height: 100%;
+}
+
+
+/*Stacked*/
+
+@media(max-width:767px) {
+    .column {
+        background-color: yellow;
+        height: 25%;
+ 
+    }
+}
+
+@media(min-width:768px) {
+    .column {
+        background-color: yellow;
+        height: 25%;
+    }
+}
+
+
+/*Horizontal*/
+
+@media(min-width:992px) {
+    .column {
+        background-color: blue;
+        height: 100%;
+    }
+}
+
+@media(min-width:1200px) {
+    .column {
+        background-color: blue;
+        height: 100%;
+    }
+}
+
+* {
+	outline: 1px solid red;
+}
