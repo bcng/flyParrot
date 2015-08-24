@@ -4,6 +4,7 @@
 //Dependencies:
 //#####################################################
 var express = require('express');
+var arDrone = require('ar-drone');
 
 //#####################################################
 //Config files:
@@ -21,15 +22,20 @@ var express = require('express');
 var app = express();
 
 //#####################################################
+//Drone:
+//#####################################################
+var client = arDrone.createClient();
+
+//#####################################################
 //Express Server Port:
 //#####################################################
 var port = process.argv[2] || 3000;
 
 //#####################################################
-//Middelware:
+//Middleware:
 //#####################################################
 
-/* Middelware to render all of our public files. Any files of
+/* Middleware to render all of our public files. Any files of
 the public folder will be renderd if you use them*/
 app.use(express.static(__dirname + '/public'));
 
