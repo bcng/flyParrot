@@ -4,19 +4,18 @@
 //Dependencies:
 //#####################################################
 var express = require('express');
+var bodyParser = require('body-parser');
+var cors = require('cors');
 var mongoose = require('mongoose');
-var arDrone = require('ar-drone');
 
 //#####################################################
 //Config files:
 //#####################################################
 var configDB = require('./app/config/database.js');
 
-
 //#####################################################
 //Controllers:
 //#####################################################
-
 
 //#####################################################
 //Express:
@@ -24,28 +23,23 @@ var configDB = require('./app/config/database.js');
 var app = express();
 
 //#####################################################
-//Drone:
-//#####################################################
-var client = arDrone.createClient();
-
-//#####################################################
 //Express Server Port:
 //#####################################################
 var port = process.argv[2] || 3000;
 
-
 //#####################################################
-//Middleware:
+//Middelware:
 //#####################################################
+app.use('/', bodyParser.json());
+app.use('/', cors());
 
-/* Middleware to render all of our public files. Any files of
+/* Middelware to render all of our public files. Any files of
 the public folder will be renderd if you use them*/
 app.use(express.static(__dirname + '/public'));
 
 //#####################################################
 //Routes:
 //#####################################################
-
 
 //#####################################################
 //Starting server:
