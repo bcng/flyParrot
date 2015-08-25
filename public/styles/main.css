@@ -25,7 +25,7 @@ body {
         height: 25%;
     }
     .column_item {
-        width: 40%;
+        width: 300px;
         margin-left: auto;
         margin-right: auto;
         -ms-transform: rotate(90deg); /* IE 9 */
@@ -41,10 +41,9 @@ body {
         height: 25%;
     }
     .column_item {
-        width: 40%;
+        width: 300px;
         margin-left: auto;
         margin-right: auto;
-
     }
 }
 

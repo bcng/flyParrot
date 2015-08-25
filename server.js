@@ -31,6 +31,7 @@ var client = arDrone.createClient();
 //#####################################################
 var port = process.argv[2] || 3000;
 
+
 //#####################################################
 //Middleware:
 //#####################################################
@@ -47,12 +48,12 @@ app.use(express.static(__dirname + '/public'));
 //#####################################################
 //Starting server:
 //#####################################################
-app.listen(port, function(err) {
-	if(err) {
-		console.log(err);
-	} else {
-		console.log('Listening on port: ' + port);
-	}
+http.listen(port, function(err) {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log('Listening on port: ' + port);
+    }
 });
 
 //#####################################################
