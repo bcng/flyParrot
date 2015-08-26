@@ -21,6 +21,7 @@ var configDB = require('./app/config/database.js');
 //Express:
 //#####################################################
 var app = express();
+var server = require('http').createServer(app);  
 
 //#####################################################
 //Express Server Port:
@@ -28,14 +29,19 @@ var app = express();
 var port = process.argv[2] || 3000;
 
 //#####################################################
-//Middelware:
+//Middleware:
 //#####################################################
 app.use('/', bodyParser.json());
 app.use('/', cors());
 
-/* Middelware to render all of our public files. Any files of
+/* Middleware to render all of our public files. Any files of
 the public folder will be renderd if you use them*/
 app.use(express.static(__dirname + '/public'));
+app.get('/', function(req, res,next) {  
+    res.sendFile(__dirname + '/index.html');
+});
+
+require("./app/controllers/controller");
 
 //#####################################################
 //Routes:
@@ -44,7 +50,7 @@ app.use(express.static(__dirname + '/public'));
 //#####################################################
 //Starting server:
 //#####################################################
-app.listen(port, function(err) {
+server.listen(port, function(err) {
 	if(err) {
 		console.log(err);
 	} else {
