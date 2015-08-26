@@ -8,21 +8,41 @@ io.on('connection', function(socket) {
 	socket.on('event', function(data) {
 		console.log(data);
 		switch (data.name) {
+			
+			//drone commands
 			case 'takeoff':
 				console.log('Client asked Ar Drone to Take Off');
 				client.takeoff();
 				break;
-			case 'spin':
-				console.log('Client asked Ar Drone to start Spinning');
-				client.clockwise(1);
+			case 'land':
+				console.log('Client asked Ar Drone to Land');
+				client.land();
 				break;
 			case 'stop':
 				console.log('Client asked Ar Drone to Stay and Hover');
 				client.stop();
 				break;
-			case 'land':
-				console.log('Client asked Ar Drone to Land');
-				client.land();
+
+			//drone vertical movement
+			case 'up':
+				console.log('Client asked Ar Drone to Move Up');
+				client.up(1);
+				break;
+			
+			case 'down':
+				console.log('Client asked Ar Drone to Move Down');
+				client.down(1);
+				break;
+			
+			case 'clockwise':
+				console.log('Client asked Ar Drone to start Spinning Clockwise');
+				client.clockwise(1);
+				break;
+
+			case 'counterClockwise':
+				console.log('Client asked Ar Drone to start Spinning Counter Clockwise');
+				client.counterClockwise(1);			
+
 		}
 	});
 });

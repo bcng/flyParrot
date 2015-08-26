@@ -1,10 +1,4 @@
-<h1>Drone Control</h1>
-<button ng-click="takeoff()">takeoff</button>
-<button ng-click="spin()">spin</button>
-<button ng-click="stop()">stop</button>
-<button ng-click="land()">land</button>
-
-<!-- <div class="container controller">
+<div class="container controller">
     <div class="row controller">
         <div class="col-md-3 column">
             <div class="column_item">
@@ -21,7 +15,9 @@
             </div>
         </div>
         <div class="col-md-3 column">
-            <img class="column_item" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png">
+            <button ng-click="takeoff()">takeoff</button>
+            <button ng-click="stop()">stop</button>
+            <button ng-click="land()">land</button>
         </div>
         <div class="col-md-3 column">
             <img class="column_item" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png">
@@ -29,18 +25,18 @@
         <div class="col-md-3 column">
             <div class="column_item">
                 <div>
-                    <button class="center-block">Up <span class="glyphicon glyphicon-arrow-up"></span></button>
+                    <button ng-click="up()" class="center-block">Up <span class="glyphicon glyphicon-arrow-up"></span></button>
                 </div>
                 <div>
-                    <button>Turn Left <span class="glyphicon glyphicon-arrow-left"></span></button>
-                    <button class="pull-right">Turn Right <span class="glyphicon glyphicon-arrow-right"></span></button>
+                    <button ng-click="counterClockwise()">Turn Left <span class="glyphicon glyphicon-arrow-left"></span></button>
+                    <button ng-click="clockwise()" class="pull-right">Turn Right <span class="glyphicon glyphicon-arrow-right"></span></button>
                 </div>
                 <div>
-                    <button class="center-block">Down <span class="glyphicon glyphicon-arrow-down"></span></button>
+                    <button ng-click="down()" class="center-block">Down <span class="glyphicon glyphicon-arrow-down"></span></button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 </div>
- -->
+
