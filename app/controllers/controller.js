@@ -1,10 +1,21 @@
 'use strict';
+//open drone socket connection
 var io = require('socket.io').listen(3002);
 
-var arDrone = require('ar-drone');
-var client  = arDrone.createClient();
-
 io.on('connection', function(socket) {
+	//instantiate drone client
+	var arDrone = require('ar-drone');
+	var client  = arDrone.createClient();
+
+	//get battery level every 2 seconds
+	setInterval(function() {
+        var batteryLevel = client.battery();
+        socket.emit('event', {
+            name: 'battery',
+            value: batteryLevel
+        });
+    }, 2000);
+
 	socket.on('event', function(data) {
 		console.log(data);
 		switch (data.name) {
