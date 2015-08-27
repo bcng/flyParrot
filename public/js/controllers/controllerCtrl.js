@@ -1,16 +1,28 @@
 (function() {
     var controllerCtrl = function($scope) {
-        
-    	//dronestream
+
+        //dronestream
         ($scope.startArDRoneStream = function() {
             new NodecopterStream(document.getElementById("placeholder"), {
                 port: 3001
             });
         }());
 
+        //socket connection for drone commands and movement
         var socket = io.connect('http://localhost:3002');
         socket.on('connect', function() {
             console.log('Connection successful');
+        });
+
+        //battery level
+        socket.on('event', function(data) {
+            if (data.name === 'battery') {
+                $scope.$apply(function() {
+                    $scope.battery = data;
+                    console.log(data);
+                });
+            }
+
         });
 
         //drone commands

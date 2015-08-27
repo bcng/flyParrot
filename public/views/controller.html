@@ -26,19 +26,22 @@
             </div>
         </div>
         <div class="col-md-3 column">
-            <img class="column_item" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png">
+            <span>Battery</span> - {{battery.value}} {{hello}}<span id="battery-value"></span>
+            <div class="bar color0">
+                <span id="battery-indicator" style="width:50%"></span>
+            </div>
         </div>
         <div class="col-md-3 column">
             <div class="column_item">
                 <div>
-                    <button ng-click="up" class="center-block">Up <span class="glyphicon glyphicon-arrow-up"></span></button>
+                    <button ng-click="up()" class="center-block">Up <span class="glyphicon glyphicon-arrow-up"></span></button>
                 </div>
                 <div>
-                    <button ng-click="counterClockwise">Turn Left <span class="glyphicon glyphicon-arrow-left"></span></button>
-                    <button ng-click="clockwise" class="pull-right">Turn Right <span class="glyphicon glyphicon-arrow-right"></span></butt3on>
+                    <button ng-click="counterClockwise()">Turn Left <span class="glyphicon glyphicon-arrow-left"></span></button>
+                    <button ng-click="clockwise()" class="pull-right">Turn Right <span class="glyphicon glyphicon-arrow-right"></span></butt3on>
                 </div>
                 <div>
-                    <button ng-click="down" class="center-block">Down <span class="glyphicon glyphicon-arrow-down"></span></button>
+                    <button ng-click="down()" class="center-block">Down <span class="glyphicon glyphicon-arrow-down"></span></button>
                 </div>
             </div>
         </div>
