@@ -9,6 +9,9 @@ body {
 
 /*Buttons*/
 
+button {
+    width: 100px;
+}
 .center-block {
   margin-left: auto;
   margin-right: auto;
@@ -21,23 +24,18 @@ body {
 /*STACKED MOBILE FULL WIDTH*/
 @media(max-width:767px) {
     .column {
-        background-color: yellow;
         height: 25%;
     }
     .column_item {
         width: 300px;
         margin-left: auto;
         margin-right: auto;
-        -ms-transform: rotate(90deg); /* IE 9 */
-        -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
-        transform: rotate(90deg);   
     }
 }
 
 /*STACKED MOBILE*/
 @media(min-width:768px) {
     .column {
-        background-color: yellow;
         height: 25%;
     }
     .column_item {
@@ -52,16 +50,13 @@ body {
 
 @media(min-width:992px) {
     .column {
-        background-color: blue;
         height: 100%;
     }
     .column_item {
         width: 100%;
         height: auto;
-        margin-top: 250%;
     }
 }
-
 
 * {
 	outline: 1px solid red;

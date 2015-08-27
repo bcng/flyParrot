@@ -3,21 +3,23 @@
         <div class="col-md-3 column">
             <div class="column_item">
                 <div>
-                    <button class="center-block">Forward <span class="glyphicon glyphicon-arrow-up"></span></button>
+                    <button ng-click="front()" class="center-block">Forward <span class="glyphicon glyphicon-arrow-up"></span></button>
                 </div>
                 <div>
-                    <button>Left <span class="glyphicon glyphicon-arrow-left"></span></button>
-                    <button class="pull-right">Right <span class="glyphicon glyphicon-arrow-right"></span></button>
+                    <button ng-click="left()">Left <span class="glyphicon glyphicon-arrow-left"></span></button>
+                    <button ng-click="right()" class="pull-right">Right <span class="glyphicon glyphicon-arrow-right"></span></button>
                 </div>
                 <div>
-                    <button class="center-block">Backward<span class="glyphicon glyphicon-arrow-down"></span></button>
+                    <button ng-click="back()" class="center-block">Backward<span class="glyphicon glyphicon-arrow-down"></span></button>
                 </div>
             </div>
         </div>
         <div class="col-md-3 column">
-            <button ng-click="takeoff()">takeoff</button>
-            <button ng-click="stop()">stop</button>
-            <button ng-click="land()">land</button>
+            <div class="column_item">
+                <button ng-click="takeoff()">takeoff</button>
+                <button ng-click="stop()">stop</button>
+                <button ng-click="land()">land</button>
+            </div>
         </div>
         <div class="col-md-3 column">
             <img class="column_item" src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png">

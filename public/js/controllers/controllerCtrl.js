@@ -43,6 +43,27 @@
 				socket.emit('event', {name: 'counterClockwise'});
 			};
 
+			//drone horizontal movement
+			$scope.front = function() {
+				console.log('Asking server to send front command to Ar Drone');
+				socket.emit('event', {name: 'front'});
+			};
+
+			$scope.back = function() {
+				console.log('Asking server to send back command to Ar Drone');
+				socket.emit('event', {name: 'back'});
+			};
+
+			$scope.left = function() {
+				console.log('Asking server to send left command to Ar Drone');
+				socket.emit('event', {name: 'left'});
+			};
+
+			$scope.right = function() {
+				console.log('Asking server to send right command to Ar Drone');
+				socket.emit('event', {name: 'right'});
+			};
+
     };
 
     controllerCtrl.$inject = ['$scope'];
