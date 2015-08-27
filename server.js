@@ -42,6 +42,7 @@ app.get('/', function(req, res,next) {
 });
 
 require("./app/controllers/controller");
+require("./app/controllers/camera-feed");
 
 //#####################################################
 //Routes:
