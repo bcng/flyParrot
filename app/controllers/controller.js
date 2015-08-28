@@ -33,6 +33,10 @@ io.on('connection', function(socket) {
 				console.log('Client asked Ar Drone to Stay and Hover');
 				client.stop();
 				break;
+			case 'ftrim':
+				console.log('Client asked Ar Drone to Flat Trim');
+				client.ftrim();
+				break;
 
 			//drone vertical movement
 			case 'up':
