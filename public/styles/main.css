@@ -26,10 +26,10 @@ button {
 }
 
 
-* {
+/** {
 	outline: 1px solid red;
 }
-
+*/
 
 #placeholder canvas {
     width: 100%;
