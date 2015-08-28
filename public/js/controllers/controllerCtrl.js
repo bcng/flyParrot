@@ -47,6 +47,13 @@
             });
         };
 
+        $scope.ftrim = function() {
+            console.log('Asking server to send flat trim command to Ar Drone');
+            socket.emit('event', {
+                name: 'ftrim'
+            });
+        };
+
         //drone vertical movement
         $scope.up = function() {
             console.log('Asking server to send up command to Ar Drone');
