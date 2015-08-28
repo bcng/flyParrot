@@ -1,15 +1,19 @@
-<h1>Ar Drone Parrot Feed</h1>
-
-<div id="placeholder"></div>
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">        
+            <div id="placeholder"></div>
+        </div>
+    </div>
+</div>
 
 <div class="container controller">
     <div class="row controller">
         <div class="col-md-3 column">
             <div class="column_item">
                 <div>
-                <button ng-click="front()" type="button" class="btn btn-default btn-md center-block">
-                    <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Forward
-                </button>
+                    <button ng-click="front()" type="button" class="btn btn-default btn-md center-block">
+                        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Forward
+                    </button>
                 </div>
                 <div>
                     <button ng-click="left()" type="button" class="btn btn-default btn-md">
@@ -40,16 +44,16 @@
             </div>
         </div>
         <div class="col-md-3 column">
-            <span>Connection status</span> - <span id="battery-value"></span> <br>
+            <span>Connection status</span> - <span id="battery-value"></span>
+            <br>
             <span>Battery</span> - {{battery.value}} {{hello}}<span id="battery-value"></span>
-            
         </div>
         <div class="col-md-3 column">
             <div class="column_item">
                 <div>
-                <button ng-click="up()" type="button" class="btn btn-default btn-md center-block">
-                    <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Up
-                </button>
+                    <button ng-click="up()" type="button" class="btn btn-default btn-md center-block">
+                        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Up
+                    </button>
                 </div>
                 <div>
                     <button ng-click="counterClockwise()" type="button" class="btn btn-default btn-md">
@@ -63,10 +67,9 @@
                     <button ng-click="down()" type="button" class="btn btn-default btn-md center-block">
                         <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Down
                     </button>
-                </div>  
+                </div>
             </div>
         </div>
     </div>
 </div>
 </div>
-
