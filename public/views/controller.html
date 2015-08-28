@@ -1,6 +1,6 @@
 <div class="jumbotron">
     <div class="container">
-        <div class="row">        
+        <div class="row">
             <div id="placeholder"></div>
         </div>
     </div>
@@ -46,7 +46,12 @@
         <div class="col-md-3 column">
             <span>Connection status</span> - <span id="battery-value"></span>
             <br>
-            <span>Battery</span> - {{battery.value}} {{hello}}<span id="battery-value"></span>
+            <span>Battery Life</span>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{battery.value}}" aria-valuemin="0" aria-valuemax="100" style="width: {{battery.value}}%;">
+                    {{battery.value}}%
+                </div>
+            </div>
         </div>
         <div class="col-md-3 column">
             <div class="column_item">
