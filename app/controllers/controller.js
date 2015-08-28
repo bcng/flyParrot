@@ -37,42 +37,42 @@ io.on('connection', function(socket) {
 			//drone vertical movement
 			case 'up':
 				console.log('Client asked Ar Drone to Move Up');
-				client.up(1);
+				client.up(0.5);
 				break;
 			
 			case 'down':
 				console.log('Client asked Ar Drone to Move Down');
-				client.down(1);
+				client.down(0.5);
 				break;
 			
 			case 'clockwise':
 				console.log('Client asked Ar Drone to start Spinning Clockwise');
-				client.clockwise(1);
+				client.clockwise(0.5);
 				break;
 
 			case 'counterClockwise':
 				console.log('Client asked Ar Drone to start Spinning Counter Clockwise');
-				client.counterClockwise(1);	
+				client.counterClockwise(0.5);	
 
 			//drone horizontal movement	
 			case 'front':
 				console.log('Client asked Ar Drone to Move Forward');
-				client.front(1);
+				client.front(0.5);
 				break;
 			
 			case 'back':
 				console.log('Client asked Ar Drone to Move Backward');
-				client.back(1);
+				client.back(0.5);
 				break;
 			
 			case 'left':
 				console.log('Client asked Ar Drone to Move Left');
-				client.left(1);
+				client.left(0.5);
 				break;
 
 			case 'right':
 				console.log('Client asked Ar Drone to Move Right');
-				client.right(1);		
+				client.right(0.5);		
 
 		}
 	});

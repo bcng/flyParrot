@@ -7,42 +7,63 @@
         <div class="col-md-3 column">
             <div class="column_item">
                 <div>
-                    <button ng-click="front()" class="center-block">Forward <span class="glyphicon glyphicon-arrow-up"></span></button>
+                <button ng-click="front()" type="button" class="btn btn-default btn-md center-block">
+                    <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Forward
+                </button>
                 </div>
                 <div>
-                    <button ng-click="left()">Left <span class="glyphicon glyphicon-arrow-left"></span></button>
-                    <button ng-click="right()" class="pull-right">Right <span class="glyphicon glyphicon-arrow-right"></span></button>
+                    <button ng-click="left()" type="button" class="btn btn-default btn-md">
+                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Left
+                    </button>
+                    <button ng-click="right()" type="button" class="btn btn-default btn-md pull-right">
+                        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Right
+                    </button>
                 </div>
                 <div>
-                    <button ng-click="back()" class="center-block">Backward<span class="glyphicon glyphicon-arrow-down"></span></button>
+                    <button ng-click="back()" type="button" class="btn btn-default btn-md center-block">
+                        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Backward
+                    </button>
                 </div>
             </div>
         </div>
         <div class="col-md-3 column">
             <div class="column_item">
-                <button ng-click="takeoff()">takeoff</button>
-                <button ng-click="stop()">stop</button>
-                <button ng-click="land()">land</button>
+                <button ng-click="takeoff()" type="button" class="btn btn-default btn-md btn-primary center-block">
+                    Takeoff
+                </button>
+                <button ng-click="stop()" type="button" class="btn btn-default btn-md btn-warning center-block">
+                    Stop
+                </button>
+                <button ng-click="land()" type="button" class="btn btn-default btn-md btn-danger center-block">
+                    Land
+                </button>
             </div>
         </div>
         <div class="col-md-3 column">
+            <span>Connection status</span> - <span id="battery-value"></span> <br>
             <span>Battery</span> - {{battery.value}} {{hello}}<span id="battery-value"></span>
-            <div class="bar color0">
-                <span id="battery-indicator" style="width:50%"></span>
-            </div>
+            
         </div>
         <div class="col-md-3 column">
             <div class="column_item">
                 <div>
-                    <button ng-click="up()" class="center-block">Up <span class="glyphicon glyphicon-arrow-up"></span></button>
+                <button ng-click="up()" type="button" class="btn btn-default btn-md center-block">
+                    <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Up
+                </button>
                 </div>
                 <div>
-                    <button ng-click="counterClockwise()">Turn Left <span class="glyphicon glyphicon-arrow-left"></span></button>
-                    <button ng-click="clockwise()" class="pull-right">Turn Right <span class="glyphicon glyphicon-arrow-right"></span></butt3on>
+                    <button ng-click="counterClockwise()" type="button" class="btn btn-default btn-md">
+                        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Turn Left
+                    </button>
+                    <button ng-click="clockwise()" type="button" class="btn btn-default btn-md pull-right">
+                        <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Turn Right
+                    </button>
                 </div>
                 <div>
-                    <button ng-click="down()" class="center-block">Down <span class="glyphicon glyphicon-arrow-down"></span></button>
-                </div>
+                    <button ng-click="down()" type="button" class="btn btn-default btn-md center-block">
+                        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span> Down
+                    </button>
+                </div>  
             </div>
         </div>
     </div>

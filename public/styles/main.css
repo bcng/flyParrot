@@ -20,44 +20,8 @@ button {
 .pull-right {
   float: right !important;
 }
-
-/*STACKED MOBILE FULL WIDTH*/
-@media(max-width:767px) {
-    .column {
-        height: 25%;
-    }
-    .column_item {
-        width: 300px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-/*STACKED MOBILE*/
-@media(min-width:768px) {
-    .column {
-        height: 25%;
-    }
-    .column_item {
-        width: 300px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-}
-
-
-/*HORIZONTAL*/
-
-@media(min-width:992px) {
-    .column {
-        height: 100%;
-    }
-    .column_item {
-        width: 100%;
-        height: auto;
-    }
-}
-
+/*
 * {
 	outline: 1px solid red;
 }
+*/
