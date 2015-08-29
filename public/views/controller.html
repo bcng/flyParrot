@@ -11,7 +11,10 @@
         <div class="col-md-3 column">
             <div class="column_item">
                 <div>
-                    <button ng-click="front()" type="button" class="btn btn-default btn-md center-block">
+                    Speed Level: 
+                    <input ng-model="speedLev" value = "text"></input> 
+
+                    <button ng-click="front(speedLev)" type="button" class="btn btn-default btn-md center-block">
                         <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Forward
                     </button>
                 </div>
