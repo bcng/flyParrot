@@ -16,6 +16,9 @@ var configDB = require('./app/config/database.js');
 //#####################################################
 //Controllers:
 //#####################################################
+var userCtrl = require('./app/controllers/userCtrl.js')
+require("./app/controllers/controller");
+require("./app/controllers/camera-feed");
 
 //#####################################################
 //Express:
@@ -41,12 +44,15 @@ app.get('/', function(req, res,next) {
     res.sendFile(__dirname + '/index.html');
 });
 
-require("./app/controllers/controller");
-require("./app/controllers/camera-feed");
+
 
 //#####################################################
 //Routes:
 //#####################################################
+app.post('/api/user', userCtrl.create);
+app.get('/api/user', userCtrl.read);
+app.put('/api/user/:id', userCtrl.update);
+app.delete('/api/user/:id', userCtrl.remove);
 
 //#####################################################
 //Starting server:

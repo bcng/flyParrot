@@ -21,7 +21,7 @@ var userSchema = new Schema({
         required: true
     },
     pictures: [{
-        type: String //embedded model
+        type: String
     }]
 });
 

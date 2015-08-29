@@ -64,10 +64,6 @@ var remove = function(req, res) {
 
 module.exports = {
     create: create,
-    login: login,
-    logout: logout,
-    loggedin: loggedin,
-    add: add,
     read: read,
     update: update,
     remove: remove
