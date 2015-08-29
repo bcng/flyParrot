@@ -58,7 +58,8 @@
         $scope.up = function() {
             console.log('Asking server to send up command to Ar Drone');
             socket.emit('event', {
-                name: 'up'
+                name: 'up',
+                speed: $scope.speedLev
             });
         };
 

@@ -41,7 +41,8 @@ io.on('connection', function(socket) {
 			//drone vertical movement
 			case 'up':
 				console.log('Client asked Ar Drone to Move Up');
-				client.up(0.1);
+				console.log(data.speed);
+				client.up(data.speed);
 				break;
 			
 			case 'down':
