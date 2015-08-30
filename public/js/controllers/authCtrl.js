@@ -15,10 +15,10 @@
                         $location.path('/controller');
                         $scope.dismiss();
                     }, function(err) {
-                        $scope.error = err.message;
+                        $scope.error = err;
                     });
                 }, function(err) {
-                    $scope.error = err.message;
+                    $scope.error = err;
                 });
             }
         };
