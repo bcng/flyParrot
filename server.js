@@ -7,12 +7,13 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose');
+var passport = require('passport');
+var session = require('express-session');
 
 //#####################################################
 //Config files:
 //#####################################################
 var configDB = require('./app/config/database.js');
-var configPassport = require('./app/config/passport.js');
 
 //#####################################################
 //Controllers:
@@ -45,7 +46,20 @@ app.get('/', function(req, res,next) {
     res.sendFile(__dirname + '/index.html');
 });
 
+/* Middleware required for passport*/
+require('./app/config/passport.js')(passport); // pass passport object for configuration
+app.use(session({ secret: 'patagonia', resave: true, saveUninitialized: true })); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
 
+/* Middleware function to be used for every secured route*/
+var auth = function(req, res, next) { 
+    if (!req.isAuthenticated()) {
+        res.status(401).end();
+    } else {
+        next();
+    }
+};
 
 //#####################################################
 //Routes:
