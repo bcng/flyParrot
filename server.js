@@ -12,6 +12,7 @@ var mongoose = require('mongoose');
 //Config files:
 //#####################################################
 var configDB = require('./app/config/database.js');
+var configPassport = require('./app/config/passport.js');
 
 //#####################################################
 //Controllers:
