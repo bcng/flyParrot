@@ -24,12 +24,12 @@
         };
 
         $scope.login = function() {
-            authService.login($scope.details).then(function() {
+            authService.login($scope.details).then(function(response) {
                 $scope.details = {};
                 $location.path('/controller');
                 $scope.dismiss();
             }, function(err) {
-                $scope.error = err.message;
+                $scope.error = err;
             });
         };
 

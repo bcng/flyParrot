@@ -4,14 +4,14 @@ app.config(function($routeProvider, $httpProvider) {
 
     $routeProvider
 
-        .when('/', {
+    .when('/', {
         templateUrl: "./views/home.html",
         controller: "homeCtrl"
     })
 
-    .when('/team', {
-        templateUrl: "./views/team.html",
-        controller: "teamCtrl"
+    .when('/about', {
+        templateUrl: "./views/about.html",
+        controller: "aboutCtrl"
     })
 
     .when('/controller', {

@@ -23,7 +23,7 @@
                 console.log('Error: ', err);
             });
         };
-
+       
         this.loggedin = function() {
             var deferred = $q.defer();
             $http.get('/api/user/loggedin').
