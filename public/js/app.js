@@ -1,6 +1,6 @@
 var app = angular.module('flyParrot', ['ngRoute']);
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $httpProvider) {
 
     $routeProvider
 
@@ -26,6 +26,21 @@ app.config(function($routeProvider) {
 
     .otherwise({
         redirectTo: '/'
+    });
+
+    $httpProvider.interceptors.push(function($q, $location) { 
+        return {
+            response: function(response) {
+                //Do something on success
+                return response;
+            },
+            responseError: function(response) {
+                if (response.status === 401) {
+                    $location.path('/');
+                }
+                return $q.reject(response);
+            }
+        };
     });
 
 });
