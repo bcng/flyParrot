@@ -75,9 +75,6 @@ app.put('/api/user/:id', userCtrl.update);
 app.delete('/api/user/:id', userCtrl.remove);
 
 
-app.get('/api/users/logout', userCtrl.logout);
-app.get('/api/users/loggedin', userCtrl.loggedin);
-
 //#####################################################
 //Starting server:
 //#####################################################
