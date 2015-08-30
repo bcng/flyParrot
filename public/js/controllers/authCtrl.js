@@ -13,6 +13,7 @@
                         $scope.details = {};
                         $scope.password = '';
                         $location.path('/controller');
+                        $scope.dismiss();
                     }, function(err) {
                         $scope.error = err.message;
                     });
@@ -26,6 +27,7 @@
             authService.login($scope.details).then(function() {
                 $scope.details = {};
                 $location.path('/controller');
+                $scope.dismiss();
             }, function(err) {
                 $scope.error = err.message;
             });

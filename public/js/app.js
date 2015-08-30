@@ -4,7 +4,7 @@ app.config(function($routeProvider, $httpProvider) {
 
     $routeProvider
 
-    .when('/', {
+        .when('/', {
         templateUrl: "./views/home.html",
         controller: "homeCtrl"
     })
@@ -16,19 +16,29 @@ app.config(function($routeProvider, $httpProvider) {
 
     .when('/controller', {
         templateUrl: "./views/controller.html",
-        controller: "controllerCtrl"
+        controller: "controllerCtrl",
+        resolve: {
+            loggedin: function(authService) {
+                authService.loggedin();
+            }
+        }
     })
 
     .when('/profile', {
         templateUrl: "./views/profile.html",
-        controller: "profileCtrl"
+        controller: "profileCtrl",
+        resolve: {
+            loggedin: function(authService) {
+                authService.loggedin();
+            }
+        }
     })
 
     .otherwise({
         redirectTo: '/'
     });
 
-    $httpProvider.interceptors.push(function($q, $location) { 
+    $httpProvider.interceptors.push(function($q, $location) {
         return {
             response: function(response) {
                 //Do something on success
