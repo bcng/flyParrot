@@ -30,6 +30,19 @@ var create = function(req, res) {
         });
 };
 
+var login = function(req, res) {
+    res.status(200).json(req.user);
+};
+
+var loggedin = function(req, res) {
+    res.json(req.isAuthenticated() ? req.user : '0');
+};
+
+var logout = function(req, res) {
+    req.logOut();
+    res.redirect('/');
+};
+
 var read = function(req, res) {
     User.find()
         .populate('products')
@@ -64,6 +77,9 @@ var remove = function(req, res) {
 
 module.exports = {
     create: create,
+    login: login,
+    loggedin: loggedin,
+    logout: logout,
     read: read,
     update: update,
     remove: remove

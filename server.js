@@ -64,10 +64,19 @@ var auth = function(req, res, next) {
 //#####################################################
 //Routes:
 //#####################################################
+app.post('/api/user/register', userCtrl.create);
+app.post('/api/user/login',passport.authenticate('local'),userCtrl.login);
+app.get('/api/user/logout', userCtrl.logout);
+app.get('/api/user/loggedin', userCtrl.loggedin);
+
 app.post('/api/user', userCtrl.create);
 app.get('/api/user', userCtrl.read);
 app.put('/api/user/:id', userCtrl.update);
 app.delete('/api/user/:id', userCtrl.remove);
+
+
+app.get('/api/users/logout', userCtrl.logout);
+app.get('/api/users/loggedin', userCtrl.loggedin);
 
 //#####################################################
 //Starting server:
