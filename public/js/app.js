@@ -9,19 +9,14 @@ app.config(function($routeProvider) {
         controller: "homeCtrl"
     })
 
-    .when('/team', {
-        templateUrl: "./views/team.html",
-        controller: "teamCtrl"
-    })
-
     .when('/controller', {
         templateUrl: "./views/controller.html",
         controller: "controllerCtrl"
     })
 
-    .when('/profile', {
-        templateUrl: "./views/profile.html",
-        controller: "profileCtrl"
+    .when('/pictures', {
+        templateUrl: "./views/picture.html",
+        controller: "pictureCtrl"
     })
 
     .otherwise({
