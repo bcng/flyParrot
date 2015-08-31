@@ -1,9 +1,8 @@
 (function() {
 
-   'use strict';
+    'use strict';
 
-   var authCtrl = function($scope, $location, authService) {
-
+    var authCtrl = function($scope, $location, authService) {
         $scope.register = function() {
             if ($scope.details.password !== $scope.password) {
                 $scope.error = 'Please make sure your passwords match!';
@@ -13,29 +12,31 @@
                     authService.login($scope.details).then(function() {
                         $scope.details = {};
                         $scope.password = '';
-                        $location.path('/controller');                
+                        $location.path('/controller');
+                        $scope.dismiss();
                     }, function(err) {
-                        $scope.error = err.message;
+                        $scope.error = err;
                     });
                 }, function(err) {
-                    $scope.error = err.message;
-              });
+                    $scope.error = err;
+                });
             }
         };
 
         $scope.login = function() {
-            authService.login($scope.details).then(function() {
+            authService.login($scope.details).then(function(response) {
                 $scope.details = {};
                 $location.path('/controller');
+                $scope.dismiss();
             }, function(err) {
-                $scope.error = err.message;
-          });
-        };       
+                $scope.error = err;
+            });
+        };
 
-   };
+    };
 
-   authCtrl.$inject = ['$scope', '$location', 'authService'];
+    authCtrl.$inject = ['$scope', '$location', 'authService'];
 
-   app.controller('authCtrl', authCtrl);
+    app.controller('authCtrl', authCtrl);
 
 }());
