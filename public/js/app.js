@@ -1,6 +1,6 @@
 var app = angular.module('flyParrot', ['ngRoute']);
 
-app.config(function($routeProvider, $httpProvider) {
+app.config(function($routeProvider) {
 
     $routeProvider
 
@@ -9,48 +9,23 @@ app.config(function($routeProvider, $httpProvider) {
         controller: "homeCtrl"
     })
 
-    .when('/about', {
-        templateUrl: "./views/about.html",
-        controller: "aboutCtrl"
+    .when('/team', {
+        templateUrl: "./views/team.html",
+        controller: "teamCtrl"
     })
 
     .when('/controller', {
         templateUrl: "./views/controller.html",
-        controller: "controllerCtrl",
-        resolve: {
-            loggedin: function(authService) {
-                authService.loggedin();
-            }
-        }
+        controller: "controllerCtrl"
     })
 
     .when('/profile', {
         templateUrl: "./views/profile.html",
-        controller: "profileCtrl",
-        resolve: {
-            loggedin: function(authService) {
-                authService.loggedin();
-            }
-        }
+        controller: "profileCtrl"
     })
 
     .otherwise({
         redirectTo: '/'
-    });
-
-    $httpProvider.interceptors.push(function($q, $location) {
-        return {
-            response: function(response) {
-                //Do something on success
-                return response;
-            },
-            responseError: function(response) {
-                if (response.status === 401) {
-                    $location.path('/');
-                }
-                return $q.reject(response);
-            }
-        };
     });
 
 });

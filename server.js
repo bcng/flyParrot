@@ -7,8 +7,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 var mongoose = require('mongoose');
-var passport = require('passport');
-var session = require('express-session');
 
 //#####################################################
 //Config files:
@@ -18,9 +16,6 @@ var configDB = require('./app/config/database.js');
 //#####################################################
 //Controllers:
 //#####################################################
-var userCtrl = require('./app/controllers/userCtrl.js')
-require("./app/controllers/controller");
-require("./app/controllers/camera-feed");
 
 //#####################################################
 //Express:
@@ -46,34 +41,12 @@ app.get('/', function(req, res,next) {
     res.sendFile(__dirname + '/index.html');
 });
 
-/* Middleware required for passport*/
-require('./app/config/passport.js')(passport); // pass passport object for configuration
-app.use(session({ secret: 'patagonia', resave: true, saveUninitialized: true })); // session secret
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
-
-/* Middleware function to be used for every secured route*/
-var auth = function(req, res, next) { 
-    if (!req.isAuthenticated()) {
-        res.status(401).end();
-    } else {
-        next();
-    }
-};
+require("./app/controllers/controller");
+require("./app/controllers/camera-feed");
 
 //#####################################################
 //Routes:
 //#####################################################
-app.post('/api/user/register', userCtrl.create);
-app.post('/api/user/login',passport.authenticate('local'),userCtrl.login);
-app.get('/api/user/logout', userCtrl.logout);
-app.get('/api/user/loggedin', userCtrl.loggedin);
-
-app.post('/api/user', userCtrl.create);
-app.get('/api/user', userCtrl.read);
-app.put('/api/user/:id', userCtrl.update);
-app.delete('/api/user/:id', userCtrl.remove);
-
 
 //#####################################################
 //Starting server:

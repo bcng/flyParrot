@@ -2,7 +2,7 @@
 //open drone socket connection
 var io = require('socket.io').listen(3002);
 
-io.on('connection', function(socket) {	
+io.on('connection', function(socket) {
 	//instantiate drone client
 	var arDrone = require('ar-drone');
 	var client  = arDrone.createClient();
@@ -14,7 +14,7 @@ io.on('connection', function(socket) {
             name: 'battery',
             value: batteryLevel
         });
-    }, 5000);
+    }, 2000);
 
 	socket.on('event', function(data) {
 		console.log(data);
@@ -41,8 +41,7 @@ io.on('connection', function(socket) {
 			//drone vertical movement
 			case 'up':
 				console.log('Client asked Ar Drone to Move Up');
-				console.log(data.speed);
-				client.up(data.speed);
+				client.up(0.1);
 				break;
 			
 			case 'down':

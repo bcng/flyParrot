@@ -22,6 +22,7 @@
                     console.log(data);
                 });
             }
+
         });
 
         //drone commands
@@ -57,8 +58,7 @@
         $scope.up = function() {
             console.log('Asking server to send up command to Ar Drone');
             socket.emit('event', {
-                name: 'up',
-                speed: $scope.speedLev
+                name: 'up'
             });
         };
 
